@@ -1,7 +1,7 @@
 SSH Tunnels Presentation
 ========================
 
-For [Nairobi LUG](https://groups.google.com/forum/#!forum/nairobi-gnu) meetup on March 2018
+For [Nairobi LUG](https://groups.google.com/forum/#!forum/nairobi-gnu) meetup in March 2018
 
 Run the presentation
 --------------------
