@@ -1,0 +1,73 @@
+SSH Tunneling
+16:00 03 Mar 2018
+
+Kennedy Mwenja
+Software Engineer, Savannah Informatics Ltd.
+mwenja07@gmail.com
+@caninemwenja
+
+* Local Port Forwarding
+
+Bring the mountain to me!
+
+.image local.png
+
+* Local Port Forwarding (contd.)
+
+`ssh` `-L` `<local` `port>:<remote` `host>:<remote` `port>` `<ssh` `host>`
+
+`ssh` `-L` `...` `-L` `...` `<ssh` `host>`
+
+_Demo_
+
+* Remote Port Forwarding
+
+Going to the mountain
+
+.image remote.png
+
+* Remote Port Forwarding (contd.)
+
+`ssh` `-R` `<remote` `port>:<local` `host>:<local` `port>` `<ssh` `host>`
+
+`ssh` `-R` `...` `-R` `...` `<ssh` `host>`
+
+_Demo_
+
+* Reverse SSH Tunnels
+
+`ssh` `-R` `10000:localhost:22` `bastion`
+
+then
+
+`ssh` `-o` `'ProxyCommand` `ssh` `bastion` `nc` `%h` `%p'` `-p` `10000` `localhost`
+
+_Demo_
+
+* Dynamic Port Forwarding
+
+aka ssh SOCKS proxy
+
+`ssh` `-D` `<port>` `<ssh` `host>`
+
+_Demo_
+
+* Profit
+
+- Remote admin on non-public servers
+- Surfing on another network
+- Surfing behind firewalls (Cheap VPN)
+- Proxy chains
+
+* Challenges
+
+- Key management
+- Port management
+- Not suitable for high throughput transfers
+- Firewalls that do ssh packet filtering
+- Keeping reverse tunnels online
+
+* Alternatives
+
+- VPNs
+- Teleport
